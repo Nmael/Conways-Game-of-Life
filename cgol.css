@@ -1,0 +1,18 @@
+#container { width: 700px; height: 500px; margin: 0 auto; }
+
+#container #header {
+	height: 114px;
+	background: #FFF url( 'img/header.png' ) center no-repeat;
+}
+
+#container #board {
+	display: block;
+	cursor: crosshair;
+	border: 1px solid #000;
+	margin: 0 auto;
+}
+
+#container #controlSet #iterations { float: right; font: 8pt sans-serif; }
+#container #controlSet { margin: 0; border: none; }
+#container #controlSet .btn {	width: 100%; }
+#container #controlSet .radio { padding-right: 4px; }

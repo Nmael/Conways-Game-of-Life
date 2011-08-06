@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="cgol.css" />
+		<link rel="icon" type="image/ico" href="img/favicon.gif" />
+		<script type="text/javascript" src="cgol.js"></script>
+		<script type="text/javascript" src="gui.js"></script>
+	</head>
+	<title>Conway's Game of Life</title>
+	<body onLoad="initBoard();initGUI()">
+		<div id="container">
+			<div id="header"></div>
+			<canvas id="board" width=700 height=500" onMouseDown="guiSetMouse(event);guiEditBoard(event)" onMouseUp="guiSetMouse(event)" onClick="//guiEditBoard(event,false)" onMouseMove="guiEditBoard(event)" onContextMenu="return false">
+				<p>Game of Life requires a <a href="http://www.getfirefox.com">modern browser.</a></p>
+			</canvas>
+
+			<fieldset id="controlSet">
+				<span id="iterations"></span>
+				<table>
+					<tr><th>Speed</th>
+						<td><table><tr>
+							<td><input id="speed" type="text" size=2 onChange="guiSetSpeed();return false" /> <label for="speed">(in milliseconds)</label></td>
+							<td><input id="pause" class="btn" type="submit" value="Pause" onMouseDown="guiTogglePause();return false" /></td>
+							<td><input id="reset" class="btn" type="submit" value="Reset" onMouseDown="guiReset();return false" /></td>
+						</tr></table></td>
+					</tr>
+					<tr><th>Seed</th>
+						<td><table><tr>
+									<td>
+										<span class="radio"><input id="seedRandom" name="seeds" type="radio" onClick="guiSetSeed( 'random' );" /><label for="seedRandom">Random</label></span>
+										<span class="radio"><input id="seedBlank" name="seeds" type="radio" onClick="guiSetSeed( 'blank' );" /><label for="seedBlank">Blank</label></span>
+									</td>
+									<td id="randomSelector"><strong>Set random:</strong> <input id="randomSeed" type="text" size=1 onChange="guiSetRandomSeed();" /></td>
+						</tr></table></td>
+					</tr>
+					<tr><th>Color</th>
+						<td><table><tr>
+							<td>
+								<span class="radio"><input id="colorBlack" name="color" type="radio" onClick="guiSetColor( 'black' );" /><label for="colorBlack">Black</label></span>
+								<span class="radio"><input id="colorTime" name="color" type="radio" onClick="guiSetColor( 'time' );" /><label for="colorTime">Time-Based</label></span>
+								<span class="radio"><input id="colorRandom" name="color" type="radio" onClick="guiSetColor( 'random' );" /><label for="colorRandom">Random</label></span>
+							</td>
+						</tr></table></td>
+						<tr><th>Cell Size</th>
+							<td><table><tr><td><input id="cellSize" type="text" size=2 onChange="guiSetCellSize();return false" /> <label for="cellSize">(in pixels)</label></td></tr></table></td>
+						</tr>
+					</table>
+			</fieldset>
+		</div>
+	</body>
+</html>
