@@ -1,0 +1,3 @@
+Simple implementation of Conway's Game of Life in Javascript.
+
+Includes speed, color, size, and seed controls. Also lets you manually add living cells: left-click adds cells, right-click removes.
